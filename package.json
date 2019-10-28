@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-template-static",
+  "name": "static-boilerplate",
   "private": true,
-  "description": "A simple static template with gatsby",
+  "description": "A simple static boilerplate",
   "version": "0.1.0",
   "author": "João Pedro Bretanha <joaopedro@nave.rs>",
   "dependencies": {
@@ -16,16 +16,33 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "reflexbox": "^4.0.6",
+    "styled-components": "^4.4.0",
+    "styled-system": "^5.1.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-styled-components": "^1.10.6",
+    "commitlint": "^8.2.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "eslint-plugin-standard": "^4.0.1",
     "gatsby-plugin-s3": "^0.3.2",
     "gatsby-plugin-styled-components": "^3.1.11",
+    "husky": "^3.0.9",
     "prettier": "^1.18.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -34,13 +51,15 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
-    "deploy:s3": "yarn build && gatsby-plugin-s3 deploy --yes"
+    "deploy:s3": "yarn build && gatsby-plugin-s3 deploy --yes",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "commit": "npx git-cz",
+    "prettier": "yarn prettier:js && git update-index --again",
+    "prettier:js": "prettier --write *.js src/*.js src/**/*.js src/**/**/*.js src/**/**/**/*.js src/**/**/**/**/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
