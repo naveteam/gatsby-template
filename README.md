@@ -1,4 +1,4 @@
-# Nave static site generator
+# Gatsby template
 
 Template developed with gatsby.js
 
