@@ -1,19 +1,18 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
-
-import bg1 from 'images/bg_1.png'
 
 const Header = () => (
   <Base>
     <Wrapper>
       <Text fontSize='32px' padding='0 0 0 30px' margin='0'>
-        Uma conexão entre empresas e profissionais capacitados na área da programação
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </Text>
       <Text fontSize='16px' padding='0 0 50px 30px' margin='0'>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.{' '}
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </Text>
     </Wrapper>
-    <Image src={bg1} />
+    <Link to='/page-2'>To page 2</Link>
   </Base>
 )
 
@@ -42,10 +41,6 @@ const Text = styled.p`
   color: #fff;
   width: 465px;
   font-size: ${({ fontSize }) => fontSize};
-`
-
-const Image = styled.img`
-  width: auto;
 `
 
 export default Header
