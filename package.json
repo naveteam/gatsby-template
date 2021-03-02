@@ -1,26 +1,12 @@
 {
-  "name": "gatsby-boilerplate",
-  "version": "1.0.0",
+  "name": "static-boilerplate",
   "private": true,
-  "description": "A simple Gatsby boilerplate",
-  "author": "Nave.rs",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "license": "MIT",
+  "description": "A simple static boilerplate",
+  "version": "0.1.0",
+  "author": "João Pedro Bretanha <joaopedro@nave.rs>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "commitlint": "^8.2.0",
-    "husky": "^3.0.9",
+    "gatsby-plugin-manifest": "^2.2.23",
+    "prop-types": "^15.7.2",
     "gatsby": "^2.32.8",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-google-analytics": "^2.11.0",
@@ -35,6 +21,41 @@
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1",
     "styled-system": "^5.1.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-styled-components": "^1.10.6",
+    "commitlint": "^8.2.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "husky": "^3.0.9",
+    "prettier": "^1.18.2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop --host=0.0.0.0",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "deploy:s3": "yarn build && gatsby-plugin-s3 deploy --yes",
+    "eslint": "eslint --ignore-path .gitignore .",
+    "commit": "npx git-cz",
+    "prettier": "yarn prettier:js && git update-index --again",
+    "prettier:js": "prettier --write *.js src/*.js src/**/*.js src/**/**/*.js src/**/**/**/*.js src/**/**/**/**/*.js"
   },
   "config": {
     "commitizen": {
