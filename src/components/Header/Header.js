@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import bg1 from '../../images/bg_1.png'
+import bg1 from 'images/bg_1.png'
 
 const Header = () => (
   <Base>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Layout, Header, SEO } from '../components'
+import { Layout, Header, SEO } from 'components'
 
 const MainPage = () => {
   return (
