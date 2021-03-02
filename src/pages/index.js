@@ -8,7 +8,6 @@ const MainPage = () => {
     <Layout>
       <SEO title='Home' />
       <Header />
-      <Link to='/page-2/'>Go to page 2</Link>
     </Layout>
   )
 }
